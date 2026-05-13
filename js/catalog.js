@@ -10,109 +10,108 @@ const Catalog = (() => {
        Tambahkan item baru di array ini untuk
        menambahkan alat ke katalog tanpa ubah HTML
        ========================================== */
-    const DATA = [
+        const DATA = [
         {
             id: 1,
             name: 'Mesin Cor Beton',
             price: 'Rp 500.000',
             priceUnit: '/hari',
-            description: 'Mesin cor beton berkualitas tinggi untuk proyek pengecoran skala besar dan kecil dengan performa stabil.',
+            description: 'Sewa mesin cor beton berkualitas tinggi untuk proyek pengecoran di Bandung. Tersedia berbagai tipe dengan performa stabil.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'https://picsum.photos/seed/concrete-pump-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-mesin-cor-beton-bandung/400/300'
         },
         {
             id: 2,
             name: 'Stamper Kodok',
             price: 'Rp 150.000',
             priceUnit: '/hari',
-            description: 'Stamper kodok untuk pemadatan tanah dan aspal pada area konstruksi, mudah dioperasikan.',
+            description: 'Sewa stamper kodok untuk pemadatan tanah dan aspal di area konstruksi Bandung. Mudah dioperasikan dan daya tahan tinggi.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'https://picsum.photos/seed/stamper-frog-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-stamper-kodok-bandung/400/300'
         },
         {
             id: 3,
             name: 'Mesin Las / Setum',
             price: 'Rp 100.000',
             priceUnit: '/hari',
-            description: 'Mesin las setum 450A cocok untuk pengelasan besi dan baja konstruksi dengan hasil rapi.',
+            description: 'Rental mesin las setum 450A untuk pengelasan besi dan baja konstruksi di Bandung. Hasil rapi dan konsisten.',
             category: 'alat-las',
             categoryLabel: 'Alat Las',
-            image: 'https://picsum.photos/seed/welding-machine-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-mesin-las-setum-bandung/400/300'
         },
         {
             id: 4,
             name: 'Jack Hammer',
             price: 'Rp 200.000',
             priceUnit: '/hari',
-            description: 'Jack hammer bor palu untuk pembongkaran beton dan aspal secara cepat dan efisien.',
+            description: 'Sewa jack hammer bor palu untuk pembongkaran beton dan aspal di Bandung. Efisien dan hemat waktu proyek.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'https://picsum.photos/seed/jack-hammer-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-jack-hammer-bandung/400/300'
         },
         {
             id: 5,
             name: 'Genset 5000 Watt',
             price: 'Rp 300.000',
             priceUnit: '/hari',
-            description: 'Genset portable 5000 Watt silent untuk kebutuhan listrik di lokasi proyek tanpa gangguan.',
+            description: 'Rental genset 5000 Watt silent untuk kebutuhan listrik proyek di Bandung. Bising rendah dan irit bahan bakar.',
             category: 'generator',
             categoryLabel: 'Generator',
-            image: 'https://picsum.photos/seed/generator-set-2024/400/300'
+            image: 'https://picsum.photos/seed/rental-genset-5000-watt-bandung/400/300'
         },
         {
             id: 6,
             name: 'Molen Beton',
             price: 'Rp 175.000',
             priceUnit: '/hari',
-            description: 'Molen beton 50 kg untuk pengadukan beton merata dan efisien di segala medan proyek.',
+            description: 'Sewa molen beton 50 kg untuk pengadukan beton di lokasi proyek Bandung. Merata, efisien, dan kuat di segala medan.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'https://picsum.photos/seed/concrete-mixer-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-molen-beton-bandung/400/300'
         },
         {
             id: 7,
             name: 'Vibrator Beton',
             price: 'Rp 125.000',
             priceUnit: '/hari',
-            description: 'Vibrator beton untuk memadatkan adukan beton dan menghilangkan udara di dalam campuran.',
+            description: 'Sewa vibrator beton untuk memadatkan adukan dan menghilangkan udara di campuran beton proyek Bandung.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'https://picsum.photos/seed/vibrator-beton-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-vibrator-beton-bandung/400/300'
         },
         {
             id: 8,
             name: 'Bar Cutter',
             price: 'Rp 100.000',
             priceUnit: '/hari',
-            description: 'Bar cutter pemotong besi beton diameter 4mm sampai 32mm dengan hasil potong presisi.',
+            description: 'Rental bar cutter pemotong besi beton diameter 4mm sampai 32mm. Hasil potong presisi untuk proyek di Bandung.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'https://picsum.photos/seed/bar-cutter-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-bar-cutter-bandung/400/300'
         },
         {
             id: 9,
             name: 'Concrete Cutter',
             price: 'Rp 350.000',
             priceUnit: '/hari',
-            description: 'Concrete cutter untuk pemotongan beton, aspal, dan lantai keramik dengan kedalaman variabel.',
+            description: 'Sewa concrete cutter untuk pemotongan beton, aspal, dan lantai keramik di Bandung. Kedalaman potong variabel.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'https://picsum.photos/seed/concrete-cutter-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-concrete-cutter-bandung/400/300'
         },
         {
             id: 10,
             name: 'Mesin Potong Keramik',
             price: 'Rp 75.000',
             priceUnit: '/hari',
-            description: 'Mesin potong keramik presisi tinggi untuk berbagai jenis ubin, granit, dan keramik.',
+            description: 'Rental mesin potong keramik presisi tinggi untuk ubin, granit, dan keramik di proyek Bandung. Mudah digunakan.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'https://picsum.photos/seed/tile-cutter-2024/400/300'
+            image: 'https://picsum.photos/seed/sewa-mesin-potong-keramik-bandung/400/300'
         }
     ];
-
     /* ==========================================
        DAFTAR KATEGORI FILTER
        Tambahkan kategori baru di sini untuk
