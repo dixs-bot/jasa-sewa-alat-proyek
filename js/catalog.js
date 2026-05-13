@@ -19,7 +19,7 @@ const Catalog = (() => {
             description: 'Sewa mesin cor beton berkualitas tinggi untuk proyek pengecoran di Bandung. Tersedia berbagai tipe dengan performa stabil.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'https://picsum.photos/seed/sewa-mesin-cor-beton-bandung/400/300'
+            image: 'mesin-molen1.png'
         },
         {
             id: 2,
@@ -39,7 +39,7 @@ const Catalog = (() => {
             description: 'Rental mesin las setum 450A untuk pengelasan besi dan baja konstruksi di Bandung. Hasil rapi dan konsisten.',
             category: 'alat-las',
             categoryLabel: 'Alat Las',
-            image: 'https://picsum.photos/seed/sewa-mesin-las-setum-bandung/400/300'
+            image: 'mesin-las.png'
         },
         {
             id: 4,
@@ -49,7 +49,7 @@ const Catalog = (() => {
             description: 'Sewa jack hammer bor palu untuk pembongkaran beton dan aspal di Bandung. Efisien dan hemat waktu proyek.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'https://picsum.photos/seed/sewa-jack-hammer-bandung/400/300'
+            image: 'jack-hammer.png'
         },
         {
             id: 5,
@@ -89,7 +89,7 @@ const Catalog = (() => {
             description: 'Rental bar cutter pemotong besi beton diameter 4mm sampai 32mm. Hasil potong presisi untuk proyek di Bandung.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'https://picsum.photos/seed/sewa-bar-cutter-bandung/400/300'
+            image: 'bar-cutter.png'
         },
         {
             id: 9,
@@ -109,7 +109,7 @@ const Catalog = (() => {
             description: 'Rental mesin potong keramik presisi tinggi untuk ubin, granit, dan keramik di proyek Bandung. Mudah digunakan.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'https://picsum.photos/seed/sewa-mesin-potong-keramik-bandung/400/300'
+            image: 'pemotong-keramik.png'
         },
         {
             id: 11,
