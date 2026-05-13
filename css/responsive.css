@@ -1,0 +1,315 @@
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* ---------- Tablet (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+    :root {
+        --text-6xl: 2.75rem;
+        --text-4xl: 2rem;
+        --text-3xl: 1.625rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+}
+
+/* ---------- Tablet Kecil (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+    :root {
+        --text-6xl: 2.25rem;
+        --text-4xl: 1.75rem;
+        --text-3xl: 1.5rem;
+        --space-24: 4rem;
+        --space-20: 3.5rem;
+        --space-16: 3rem;
+    }
+
+    /* Navbar Mobile */
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-actions .btn {
+        display: none;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 360px;
+        height: 100vh;
+        height: 100dvh;
+        background: var(--white);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform var(--transition-slow);
+        z-index: var(--z-navbar);
+        padding: calc(var(--navbar-height) + var(--space-8)) var(--space-8) var(--space-8);
+        overflow-y: auto;
+    }
+
+    .navbar-menu.open {
+        transform: translateX(0);
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-1);
+    }
+
+    .navbar-link {
+        color: var(--dark-800);
+        font-size: var(--text-base);
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+        background: rgba(250,204,21,0.1);
+        color: var(--yellow-500);
+    }
+
+    .navbar-link.active::after {
+        display: none;
+    }
+
+    /* Mobile overlay */
+    .navbar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15,23,42,0.5);
+        z-index: calc(var(--z-navbar) - 1);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+    }
+
+    .navbar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Hero */
+    .hero-content {
+        padding-top: calc(var(--navbar-height) + var(--space-6));
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero-stats {
+        gap: var(--space-8);
+    }
+
+    .hero-stat-number {
+        font-size: var(--text-2xl);
+    }
+
+    .hero-scroll-indicator {
+        display: none;
+    }
+
+    /* Features */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .feature-card {
+        padding: var(--space-6);
+    }
+
+    /* Catalog */
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--space-4);
+    }
+
+    /* Service */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    /* Form */
+    .form-wrapper {
+        padding: var(--space-6);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-2);
+        text-align: center;
+    }
+
+    /* Floating WA - hide on mobile because sticky CTA exists */
+    .floating-wa {
+        bottom: calc(var(--space-8) + 60px);
+        right: var(--space-4);
+    }
+
+    .floating-wa-tooltip {
+        display: none;
+    }
+
+    .floating-wa-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem;
+    }
+
+    /* Sticky CTA Mobile */
+    .sticky-cta-mobile {
+        display: block;
+    }
+
+    /* Testimoni */
+    .testimonial-card {
+        padding: var(--space-4) 0;
+    }
+
+    .testimonial-card-inner {
+        padding: var(--space-6);
+    }
+
+    .testimonial-text {
+        font-size: var(--text-base);
+    }
+
+    /* CTA */
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ---------- Mobile Kecil (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+    :root {
+        --text-6xl: 1.875rem;
+        --text-4xl: 1.5rem;
+        --text-3xl: 1.25rem;
+        --space-24: 3rem;
+        --space-20: 2.5rem;
+        --space-16: 2rem;
+    }
+
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-controls {
+        gap: var(--space-4);
+    }
+
+    .catalog-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        width: 100%;
+        padding-bottom: var(--space-2);
+    }
+
+    .catalog-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+    .form-wrapper {
+        padding: var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+
+    .form-upload {
+        padding: var(--space-6);
+    }
+
+    .section-header {
+        margin-bottom: var(--space-10);
+    }
+
+    .map-container iframe {
+        height: 220px;
+    }
+}
+
+/* ---------- Desktop Besar (min-width: 1440px) ---------- */
+@media (min-width: 1440px) {
+    :root {
+        --container-max: 1320px;
+    }
+
+    .hero-title {
+        font-size: 4.25rem;
+    }
+}
+
+/* ---------- Prefers Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero-img {
+        transform: scale(1) !important;
+    }
+}

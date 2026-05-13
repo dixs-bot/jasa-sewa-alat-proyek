@@ -1,0 +1,162 @@
+/* ========================================
+   SCROLL REVEAL
+   ======================================== */
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+}
+
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+.reveal-scale {
+    transform: scale(0.9);
+}
+
+.reveal-up.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-scale.revealed {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ========================================
+   SKELETON PULSE
+   ======================================== */
+@keyframes skeletonPulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ========================================
+   SPINNER
+   ======================================== */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.bx-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* ========================================
+   COUNTER ANIMATION
+   ======================================== */
+.counter-animate {
+    transition: none;
+}
+
+/* ========================================
+   HOVER LIFT (additional polish)
+   ======================================== */
+.hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   PARALLAX CONTAINER
+   ======================================== */
+.parallax-layer {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+/* ========================================
+   FORM SUCCESS ANIMATION
+   ======================================== */
+@keyframes successPop {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.form-success.visible {
+    animation: successPop 0.5s ease forwards;
+}
+
+.form-success-icon i {
+    animation: successCheck 0.6s ease 0.3s both;
+}
+
+@keyframes successCheck {
+    0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ========================================
+   PULSE RING (WhatsApp button)
+   ======================================== */
+@keyframes pulseRing {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.floating-wa-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-full);
+    background: #25d366;
+    animation: pulseRing 2s ease-out infinite;
+    z-index: -1;
+}
+
+/* ========================================
+   TOAST NOTIFICATION
+   ======================================== */
+.toast {
+    position: fixed;
+    top: calc(var(--navbar-height) + var(--space-4));
+    right: var(--space-4);
+    z-index: 2000;
+    padding: var(--space-4) var(--space-6);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transform: translateX(120%);
+    transition: transform var(--transition-slow);
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.toast-success {
+    border-left: 4px solid var(--success);
+}
+
+.toast.toast-error {
+    border-left: 4px solid var(--error);
+}
