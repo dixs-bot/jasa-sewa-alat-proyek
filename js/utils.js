@@ -105,7 +105,12 @@ Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
             });
         }, { rootMargin: '100px' });
 
-        images.forEach(img => imageObserver.observe(img));
+        images.forEach(img => {
+    console.log('IMG FOUND =>', img);
+    console.log('DATA SRC =>', img.dataset.src);
+
+    imageObserver.observe(img);
+});
     }
 
     /* ---------- Format Rupiah (future use) ---------- */
