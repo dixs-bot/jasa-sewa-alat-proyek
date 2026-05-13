@@ -1693,3 +1693,244 @@ button {
     border-top: 1px solid var(--gray-200);
     box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
 }
+/* ========================================
+   AREA LAYANAN SECTION (Local SEO)
+   ======================================== */
+.area-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-10);
+}
+
+.area-card {
+    padding: var(--space-6);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+    text-align: center;
+}
+
+.area-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(250,204,21,0.3);
+    background: var(--white);
+}
+
+.area-card i {
+    font-size: var(--text-2xl);
+    color: var(--yellow-500);
+    margin-bottom: var(--space-3);
+    display: block;
+}
+
+.area-card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--dark-900);
+    margin-bottom: var(--space-2);
+}
+
+.area-card p {
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+.area-cta {
+    text-align: center;
+    padding: var(--space-8);
+    background: linear-gradient(135deg, rgba(250,204,21,0.08), rgba(250,204,21,0.03));
+    border: 1px dashed rgba(250,204,21,0.3);
+    border-radius: var(--radius-2xl);
+}
+
+.area-cta p {
+    font-size: var(--text-base);
+    color: var(--dark-700);
+    margin-bottom: var(--space-4);
+}
+
+/* ========================================
+   FAQ SECTION (SEO FAQ Schema)
+   ======================================== */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.faq-item:hover {
+    border-color: rgba(250,204,21,0.3);
+}
+
+.faq-item[open] {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(250,204,21,0.3);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--dark-900);
+    cursor: pointer;
+    list-style: none;
+    transition: color var(--transition-fast);
+    user-select: none;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '\2193';
+    font-size: var(--text-lg);
+    color: var(--gray-400);
+    transition: transform var(--transition-base);
+    flex-shrink: 0;
+}
+
+.faq-item[open] .faq-question {
+    color: var(--yellow-500);
+}
+
+.faq-item[open] .faq-question::after {
+    transform: rotate(180deg);
+    color: var(--yellow-500);
+}
+
+.faq-answer {
+    padding: 0 var(--space-6) var(--space-6);
+}
+
+.faq-answer p {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    line-height: 1.8;
+}
+
+.faq-answer strong {
+    color: var(--dark-800);
+}
+
+.faq-answer ol {
+    margin-top: var(--space-2);
+    padding-left: var(--space-5);
+}
+
+.faq-answer ol li {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    line-height: 1.8;
+    margin-bottom: var(--space-1);
+}
+
+/* ========================================
+   MAP DIRECTION LINK
+   ======================================== */
+.map-direction-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(250,204,21,0.1);
+    color: var(--yellow-400);
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.map-direction-link:hover {
+    background: rgba(250,204,21,0.2);
+    color: var(--yellow-300);
+    transform: translateX(3px);
+}
+
+/* ========================================
+   TRUST BADGES (Footer)
+   ======================================== */
+.footer-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    padding: var(--space-6) 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: var(--space-6);
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    font-weight: 500;
+}
+
+.trust-badge i {
+    font-size: var(--text-lg);
+    color: var(--yellow-400);
+}
+
+/* ========================================
+   AREA LAYANAN RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+    .area-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .area-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .area-card {
+        padding: var(--space-4);
+    }
+
+    .faq-question {
+        padding: var(--space-4) var(--space-5);
+        font-size: var(--text-sm);
+    }
+
+    .faq-answer {
+        padding: 0 var(--space-5) var(--space-5);
+    }
+
+    .footer-trust {
+        gap: var(--space-4);
+    }
+
+    .trust-badge {
+        font-size: 0.6875rem;
+    }
+}
