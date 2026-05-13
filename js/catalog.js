@@ -19,7 +19,7 @@ const Catalog = (() => {
             description: 'Sewa mesin cor beton berkualitas tinggi untuk proyek pengecoran di Bandung. Tersedia berbagai tipe dengan performa stabil.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'assets/images/mesin-molen1.png'
+            image: 'assets/images/mesin-molen1.jpeg'
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ const Catalog = (() => {
             description: 'Sewa stamper kodok untuk pemadatan tanah dan aspal di area konstruksi Bandung. Mudah dioperasikan dan daya tahan tinggi.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'assets/images/stemper-kuda'
+            image: 'assets/images/stemper-kuda.png'
         },
         {
             id: 3,
@@ -69,7 +69,7 @@ const Catalog = (() => {
             description: 'Sewa molen beton 50 kg untuk pengadukan beton di lokasi proyek Bandung. Merata, efisien, dan kuat di segala medan.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'assets/images/mesin-molen-png'
+            image: 'assets/images/mesin-molen.png'
         },
         {
             id: 7,
