@@ -39,7 +39,7 @@ const Catalog = (() => {
             description: 'Rental mesin las setum 450A untuk pengelasan besi dan baja konstruksi di Bandung. Hasil rapi dan konsisten.',
             category: 'alat-las',
             categoryLabel: 'Alat Las',
-            image: 'assets/images/mesin-las.png'
+            image: 'assets/images/mesin-las.jpeg'
         },
         {
             id: 4,
