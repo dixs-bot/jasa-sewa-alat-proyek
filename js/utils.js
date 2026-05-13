@@ -5,7 +5,7 @@
 const Utils = (() => {
     /* ---------- Konfigurasi ---------- */
     const CONFIG = {
-        WHATSAPP_NUMBER: '6281234567890',
+        WHATSAPP_NUMBER: '6281313413771',
         WHATSAPP_BASE_URL: 'https://wa.me',
         DEBOUNCE_DELAY: 300,
         TOAST_DURATION: 3500
