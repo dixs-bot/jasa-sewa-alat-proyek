@@ -84,34 +84,32 @@ Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
     }
 
     /* ---------- Lazy Load Images ---------- */
-    function lazyLoadImages() {
-        const images = document.querySelectorAll('img[data-src]');
-        if (!images.length) return;
+   function lazyLoadImages() {
+    const images = document.querySelectorAll('img[data-src]');
 
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    img.addEventListener('load', () => {
-                        img.classList.add('loaded');
-                    }, { once: true });
-                    img.addEventListener('error', () => {
-                        img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" fill="%23f1f5f9"%3E%3Crect width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%2394a3b8" font-family="sans-serif" font-size="16"%3EGambar tidak tersedia%3C/text%3E%3C/svg%3E';
-                    }, { once: true });
-                    imageObserver.unobserve(img);
-                }
-            });
-        }, { rootMargin: '100px' });
+    images.forEach(img => {
+        const realSrc = img.dataset.src;
 
-        images.forEach(img => {
-    console.log('IMG FOUND =>', img);
-    console.log('DATA SRC =>', img.dataset.src);
+        if (!realSrc) {
+            console.error('Image src missing:', img);
+            return;
+        }
 
-    imageObserver.observe(img);
-});
-    }
+        img.src = realSrc;
+
+        img.onload = () => {
+            img.classList.add('loaded');
+        };
+
+        img.onerror = () => {
+            console.error('Failed load image:', realSrc);
+
+            img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" fill="%23f1f5f9"%3E%3Crect width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%2394a3b8" font-family="sans-serif" font-size="16"%3EGambar tidak tersedia%3C/text%3E%3C/svg%3E';
+        };
+
+        img.removeAttribute('data-src');
+    });
+}
 
     /* ---------- Format Rupiah (future use) ---------- */
     function formatRupiah(number) {
