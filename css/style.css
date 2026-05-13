@@ -832,10 +832,12 @@ button {
     background: var(--gray-100);
 }
 
-.catalog-card-img img {
-    width: 100%;
-    height: 100%;
-    transition: transform var(--transition-slow);
+.catalog-card-img{
+    padding:10px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .catalog-card:hover .catalog-card-img img {
