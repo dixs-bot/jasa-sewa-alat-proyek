@@ -29,7 +29,7 @@ const Catalog = (() => {
             description: 'Sewa stamper kodok untuk pemadatan tanah dan aspal di area konstruksi Bandung. Mudah dioperasikan dan daya tahan tinggi.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'https://picsum.photos/seed/sewa-stamper-kodok-bandung/400/300'
+            image: 'stemper-kuda'
         },
         {
             id: 3,
@@ -59,7 +59,7 @@ const Catalog = (() => {
             description: 'Rental genset 5000 Watt silent untuk kebutuhan listrik proyek di Bandung. Bising rendah dan irit bahan bakar.',
             category: 'generator',
             categoryLabel: 'Generator',
-            image: 'https://picsum.photos/seed/rental-genset-5000-watt-bandung/400/300'
+            image: 'genset.png'
         },
         {
             id: 6,
@@ -69,7 +69,7 @@ const Catalog = (() => {
             description: 'Sewa molen beton 50 kg untuk pengadukan beton di lokasi proyek Bandung. Merata, efisien, dan kuat di segala medan.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'https://picsum.photos/seed/sewa-molen-beton-bandung/400/300'
+            image: 'mesin-molen-png'
         },
         {
             id: 7,
@@ -79,7 +79,7 @@ const Catalog = (() => {
             description: 'Sewa vibrator beton untuk memadatkan adukan dan menghilangkan udara di campuran beton proyek Bandung.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'https://picsum.photos/seed/sewa-vibrator-beton-bandung/400/300'
+            image: 'vibrator.png'
         },
         {
             id: 8,
@@ -99,7 +99,7 @@ const Catalog = (() => {
             description: 'Sewa concrete cutter untuk pemotongan beton, aspal, dan lantai keramik di Bandung. Kedalaman potong variabel.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'https://picsum.photos/seed/sewa-concrete-cutter-bandung/400/300'
+            image: 'cuting-jalan.png'
         },
         {
             id: 10,
@@ -110,8 +110,18 @@ const Catalog = (() => {
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
             image: 'https://picsum.photos/seed/sewa-mesin-potong-keramik-bandung/400/300'
-        }
-    ];
+        },
+        {
+            id: 11,
+            name: 'Baby Setum',
+            price: 'Rp 75.000',
+            priceUnit: '/hari',
+            description: 'Rental baby setum untuk pemadatan aspal,baby setum di proyek Bandung. Mudah digunakan.',
+            category: 'mesin-beton',
+            categoryLabel: 'Mesin Beton',
+            image: 'baby-setum.png'
+        },
+        ];
     /* ==========================================
        DAFTAR KATEGORI FILTER
        Tambahkan kategori baru di sini untuk
