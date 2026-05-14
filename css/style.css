@@ -234,7 +234,7 @@ button {
 .btn-outline {
     border: 2px solid var(--dark-800);
     color: var(--dark-800);
-    background: transparent;
+    background: aliceblue;
 }
 
 .btn-outline:hover {
