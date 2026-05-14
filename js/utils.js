@@ -17,7 +17,25 @@ const Utils = (() => {
         window.open(url, '_blank', 'noopener,noreferrer');
     }
 
-    /* ---------- Buat pesan WhatsApp service ---------- */
+    /* ---------- Pesan WhatsApp: Jual Produk ---------- */
+    function buildSellMessage(productName) {
+        return `Halo Admin ProyekTools
+
+Saya mau tanya produk ${productName} yang di jual serta tanyakan harga nya.
+
+Mohon info detailnya. Terima kasih.`;
+    }
+
+    /* ---------- Pesan WhatsApp: Beli Produk ---------- */
+    function buildBuyMessage(productName) {
+        return `Halo Admin ProyekTools
+
+Saya mau beli ${productName} serta tanyakan harga nya.
+
+Mohon info ketersediaan dan harganya. Terima kasih.`;
+    }
+
+    /* ---------- Pesan WhatsApp: Service Alat ---------- */
     function buildServiceMessage(data) {
         return `Halo Admin Rental Alat
 
@@ -35,15 +53,6 @@ Catatan: ${data.catatan || '-'}
 Mohon info estimasi perbaikan. Terima kasih.`;
     }
 
-    /* ---------- Buat pesan WhatsApp rental ---------- */
-    function buildRentalMessage(itemName) {
-        return `Halo Admin Rental Alat
-
-Saya ingin menyewa *${itemName}*.
-
-Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
-    }
-
     /* ---------- Debounce ---------- */
     function debounce(func, delay) {
         let timeoutId;
@@ -55,7 +64,6 @@ Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
 
     /* ---------- Toast Notification ---------- */
     function showToast(message, type) {
-        /* Hapus toast lama jika ada */
         const existing = document.querySelector('.toast');
         if (existing) existing.remove();
 
@@ -69,14 +77,12 @@ Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
 
         document.body.appendChild(toast);
 
-        /* Trigger show */
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 toast.classList.add('show');
             });
         });
 
-        /* Auto hide */
         setTimeout(() => {
             toast.classList.remove('show');
             setTimeout(() => toast.remove(), 400);
@@ -84,34 +90,31 @@ Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
     }
 
     /* ---------- Lazy Load Images ---------- */
-   function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
+    function lazyLoadImages() {
+        const images = document.querySelectorAll('img[data-src]');
+        if (!images.length) return;
 
-    images.forEach(img => {
-        const realSrc = img.dataset.src;
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.addEventListener('load', () => {
+                        img.classList.add('loaded');
+                    }, { once: true });
+                    img.addEventListener('error', () => {
+                        img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" fill="%23f1f5f9"%3E%3Crect width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%2394a3b8" font-family="sans-serif" font-size="16"%3EGambar tidak tersedia%3C/text%3E%3C/svg%3E';
+                    }, { once: true });
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, { rootMargin: '100px' });
 
-        if (!realSrc) {
-            console.error('Image src missing:', img);
-            return;
-        }
+        images.forEach(img => imageObserver.observe(img));
+    }
 
-        img.src = realSrc;
-
-        img.onload = () => {
-            img.classList.add('loaded');
-        };
-
-        img.onerror = () => {
-            console.error('Failed load image:', realSrc);
-
-            img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" fill="%23f1f5f9"%3E%3Crect width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%2394a3b8" font-family="sans-serif" font-size="16"%3EGambar tidak tersedia%3C/text%3E%3C/svg%3E';
-        };
-
-        img.removeAttribute('data-src');
-    });
-}
-
-    /* ---------- Format Rupiah (future use) ---------- */
+    /* ---------- Format Rupiah ---------- */
     function formatRupiah(number) {
         return 'Rp ' + number.toLocaleString('id-ID');
     }
@@ -126,8 +129,9 @@ Mohon info ketersediaan dan harga terbaru. Terima kasih.`;
     /* ---------- Public API ---------- */
     return {
         openWhatsApp,
+        buildSellMessage,
+        buildBuyMessage,
         buildServiceMessage,
-        buildRentalMessage,
         debounce,
         showToast,
         lazyLoadImages,
