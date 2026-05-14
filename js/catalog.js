@@ -1,7 +1,7 @@
 /* ========================================
    CATALOG MODULE
    Data katalog, render cards, search,
-   filter kategori, CTA Jual & Beli WA
+   filter kategori, CTA Jual, Beli, Service
    ======================================== */
 const Catalog = (() => {
 
@@ -233,6 +233,9 @@ const Catalog = (() => {
                             <button class="btn btn-buy btn-sm" data-item="${Utils.escapeHTML(item.name)}" data-type="beli" aria-label="Beli ${Utils.escapeHTML(item.name)}">
                                 <i class="bx bx-cart"></i> Beli
                             </button>
+                            <button class="btn btn-service btn-sm" data-item="${Utils.escapeHTML(item.name)}" data-type="service" aria-label="Service ${Utils.escapeHTML(item.name)}">
+                                <i class="bx bx-wrench"></i> Service
+                            </button>
                         </div>
                     </div>
                 </article>
@@ -266,7 +269,7 @@ const Catalog = (() => {
     /* ==========================================
        EVENT BINDINGS
        Mengikat event ke search input, filter,
-       dan tombol jual/beli (event delegation)
+       dan tombol jual/beli/service (delegation)
        ========================================== */
     function bindEvents() {
         /* Search input dengan debounce agar tidak
@@ -296,11 +299,10 @@ const Catalog = (() => {
             renderCards();
         });
 
-        /* Tombol Jual & Beli via event delegation
-           Ditempatkan di sini (bindEvents) agar hanya
-           dipasang SEKALI saat init, tidak dobel saat filter/search */
+        /* Tombol Jual, Beli, & Service via event delegation
+           Ditempatkan di sini agar hanya dipasang SEKALI */
         gridEl.addEventListener('click', (e) => {
-            const btn = e.target.closest('.btn-sell, .btn-buy');
+            const btn = e.target.closest('.btn-sell, .btn-buy, .btn-service');
             if (!btn) return;
 
             const itemName = btn.dataset.item;
@@ -311,6 +313,8 @@ const Catalog = (() => {
                 message = `Halo Admin ProyekTools\n\nSaya mau tanya produk ${itemName} yang di jual serta tanyakan harga nya.\n\nMohon info detailnya. Terima kasih.`;
             } else if (type === 'beli') {
                 message = `Halo Admin ProyekTools\n\nSaya mau beli ${itemName} serta tanyakan harga nya.\n\nMohon info ketersediaan dan harganya. Terima kasih.`;
+            } else if (type === 'service') {
+                message = `Halo Admin ProyekTools\n\nSaya ingin tanya service alat untuk ${itemName}.\n\nMohon info jasa service dan estimasi perbaikannya. Terima kasih.`;
             }
 
             if (message) {
