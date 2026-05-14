@@ -1,16 +1,4 @@
-# ========================================
-# robots.txt - ProyekTools
-# Rental & Service Alat Proyek Bandung
-# ========================================
-
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://proyektools.com/sitemap.xml
-
-# Disallow folder yang tidak perlu di-index
-Disallow: /assets/icons/
-Disallow: /components/
-Disallow: /js/
-Disallow: /css/
+Sitemap: https://proyektools.online/sitemap.xml
