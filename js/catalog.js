@@ -1,7 +1,7 @@
 /* ========================================
    CATALOG MODULE
    Data katalog, render cards, search,
-   filter kategori, sewa via WhatsApp
+   filter kategori, CTA Jual & Beli WA
    ======================================== */
 const Catalog = (() => {
 
@@ -10,7 +10,7 @@ const Catalog = (() => {
        Tambahkan item baru di array ini untuk
        menambahkan alat ke katalog tanpa ubah HTML
        ========================================== */
-        const DATA = [
+    const DATA = [
         {
             id: 1,
             name: 'Mesin Cor Beton',
@@ -120,8 +120,9 @@ const Catalog = (() => {
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
             image: 'assets/images/baby-setum.png'
-        },
-        ];
+        }
+    ];
+
     /* ==========================================
        DAFTAR KATEGORI FILTER
        Tambahkan kategori baru di sini untuk
@@ -225,19 +226,18 @@ const Catalog = (() => {
                     <div class="catalog-card-body">
                         <h3 class="catalog-card-name">${Utils.escapeHTML(item.name)}</h3>
                         <p class="catalog-card-desc">${Utils.escapeHTML(item.description)}</p>
-                        <div class="catalog-card-footer">
-                            <div class="catalog-card-price">${item.price} <small>${item.priceUnit}</small></div>
-                            <button class="btn btn-primary btn-sm btn-rent-wa" data-item="${Utils.escapeHTML(item.name)}" aria-label="Sewa ${Utils.escapeHTML(item.name)} via WhatsApp">
-                                <i class="bx bxl-whatsapp"></i> Sewa
+                        <div class="catalog-card-actions">
+                            <button class="btn btn-sell btn-sm" data-item="${Utils.escapeHTML(item.name)}" data-type="jual" aria-label="Tanya jual ${Utils.escapeHTML(item.name)}">
+                                <i class="bx bx-tag"></i> Jual
+                            </button>
+                            <button class="btn btn-buy btn-sm" data-item="${Utils.escapeHTML(item.name)}" data-type="beli" aria-label="Beli ${Utils.escapeHTML(item.name)}">
+                                <i class="bx bx-cart"></i> Beli
                             </button>
                         </div>
                     </div>
                 </article>
             `;
         }).join('');
-
-        /* Pasang event listener pada tombol sewa */
-        bindRentButtons();
 
         /* Jalankan lazy load untuk gambar baru */
         Utils.lazyLoadImages();
@@ -265,9 +265,8 @@ const Catalog = (() => {
 
     /* ==========================================
        EVENT BINDINGS
-       Mengikat event ke search input dan
-       filter buttons menggunakan event
-       delegation untuk performa optimal
+       Mengikat event ke search input, filter,
+       dan tombol jual/beli (event delegation)
        ========================================== */
     function bindEvents() {
         /* Search input dengan debounce agar tidak
@@ -296,22 +295,32 @@ const Catalog = (() => {
             /* Render ulang cards dengan filter baru */
             renderCards();
         });
-    }
 
-    /* ==========================================
-       BIND RENT BUTTONS
-       Mengikat event klik pada setiap tombol
-       "Sewa" untuk redirect ke WhatsApp
-       ========================================== */
-    function bindRentButtons() {
-        const rentButtons = gridEl.querySelectorAll('.btn-rent-wa');
+        /* Tombol Jual & Beli via event delegation
+           Ditempatkan di sini (bindEvents) agar hanya
+           dipasang SEKALI saat init, tidak dobel saat filter/search */
+        gridEl.addEventListener('click', (e) => {
+            const btn = e.target.closest('.btn-sell, .btn-buy');
+            if (!btn) return;
 
-        rentButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const itemName = btn.dataset.item;
-                const message = Utils.buildRentalMessage(itemName);
-                Utils.openWhatsApp(message);
-            });
+            const itemName = btn.dataset.item;
+            const type = btn.dataset.type;
+            let message = '';
+
+            if (type === 'jual') {
+                message = `Halo Admin ProyekTools\n\nSaya mau tanya produk ${itemName} yang di jual serta tanyakan harga nya.\n\nMohon info detailnya. Terima kasih.`;
+            } else if (type === 'beli') {
+                message = `Halo Admin ProyekTools\n\nSaya mau beli ${itemName} serta tanyakan harga nya.\n\nMohon info ketersediaan dan harganya. Terima kasih.`;
+            }
+
+            if (message) {
+                /* Fallback aman: cek apakah Utils tersedia */
+                if (typeof Utils !== 'undefined' && Utils.openWhatsApp) {
+                    Utils.openWhatsApp(message);
+                } else {
+                    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(message)}`, '_blank');
+                }
+            }
         });
     }
 
