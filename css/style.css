@@ -1935,3 +1935,135 @@ button {
         font-size: 0.6875rem;
     }
 }
+
+/* ========================================
+   CATALOG CARD ACTIONS
+   Tombol Jual (Merah) & Beli (Hijau)
+   ======================================== */
+.catalog-card-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: auto;
+}
+
+/* Tombol Jual - Merah */
+.btn-sell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    line-height: 1;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-sell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.btn-sell:hover::before {
+    opacity: 1;
+}
+
+.btn-sell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn-sell:active {
+    transform: translateY(0);
+}
+
+/* Tombol Beli - Hijau */
+.btn-buy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    line-height: 1;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-buy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.btn-buy:hover::before {
+    opacity: 1;
+}
+
+.btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.btn-buy:active {
+    transform: translateY(0);
+}
+
+/* Override .catalog-card-body agar tombol selalu di bawah */
+.catalog-card-body {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Override .catalog-card-desc agar fleksibel */
+.catalog-card-desc {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    line-height: 1.5;
+    margin-bottom: var(--space-5);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+/* ========================================
+   RESPONSIVE TOMBOL JUAL & BELI
+   ======================================== */
+@media (max-width: 480px) {
+    .catalog-card-actions {
+        gap: var(--space-2);
+    }
+
+    .btn-sell,
+    .btn-buy {
+        padding: var(--space-3) var(--space-3);
+        font-size: var(--text-xs);
+    }
+}
