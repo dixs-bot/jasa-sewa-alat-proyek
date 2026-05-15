@@ -109,7 +109,7 @@ const Catalog = (() => {
             description: 'Rental mesin potong keramik presisi tinggi untuk ubin, granit, dan keramik di proyek Bandung. Mudah digunakan.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'assets/images/bekas-pemotong-keramik.png'
+            image: 'assets/images/bekas-pemotong-kramik.png'
         },
         {
             id: 11,
