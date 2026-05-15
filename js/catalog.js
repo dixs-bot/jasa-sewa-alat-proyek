@@ -19,7 +19,7 @@ const Catalog = (() => {
             description: 'Sewa mesin cor beton berkualitas tinggi untuk proyek pengecoran di Bandung. Tersedia berbagai tipe dengan performa stabil.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'assets/images/mesin-molen1.jpeg'
+            image: 'assets/images/bekas-molen.png'
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ const Catalog = (() => {
             description: 'Sewa stamper kodok untuk pemadatan tanah dan aspal di area konstruksi Bandung. Mudah dioperasikan dan daya tahan tinggi.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'assets/images/stemper-kuda.png'
+            image: 'assets/images/bekas-kodok.png'
         },
         {
             id: 3,
@@ -39,7 +39,7 @@ const Catalog = (() => {
             description: 'Rental mesin las setum 450A untuk pengelasan besi dan baja konstruksi di Bandung. Hasil rapi dan konsisten.',
             category: 'alat-las',
             categoryLabel: 'Alat Las',
-            image: 'assets/images/mesin-las.jpeg'
+            image: 'assets/images/bekas-lasan.png'
         },
         {
             id: 4,
@@ -49,7 +49,7 @@ const Catalog = (() => {
             description: 'Sewa jack hammer bor palu untuk pembongkaran beton dan aspal di Bandung. Efisien dan hemat waktu proyek.',
             category: 'alat-keras',
             categoryLabel: 'Alat Keras',
-            image: 'assets/images/jack-hammer.png'
+            image: 'assets/images/bekas-borr.png'
         },
         {
             id: 5,
@@ -59,7 +59,7 @@ const Catalog = (() => {
             description: 'Rental genset 5000 Watt silent untuk kebutuhan listrik proyek di Bandung. Bising rendah dan irit bahan bakar.',
             category: 'generator',
             categoryLabel: 'Generator',
-            image: 'assets/images/genset.png'
+            image: 'assets/images/bekas-genset.png'
         },
         {
             id: 6,
@@ -69,7 +69,7 @@ const Catalog = (() => {
             description: 'Sewa molen beton 50 kg untuk pengadukan beton di lokasi proyek Bandung. Merata, efisien, dan kuat di segala medan.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'assets/images/mesin-molen.png'
+            image: 'assets/images/bekas-molen.png'
         },
         {
             id: 7,
@@ -79,7 +79,7 @@ const Catalog = (() => {
             description: 'Sewa vibrator beton untuk memadatkan adukan dan menghilangkan udara di campuran beton proyek Bandung.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'assets/images/vibrator.png'
+            image: 'assets/images/bekas-vibrator.png'
         },
         {
             id: 8,
@@ -89,7 +89,7 @@ const Catalog = (() => {
             description: 'Rental bar cutter pemotong besi beton diameter 4mm sampai 32mm. Hasil potong presisi untuk proyek di Bandung.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'assets/images/bar-cutter.png'
+            image: 'assets/images/bekas-barcutter.png'
         },
         {
             id: 9,
@@ -99,7 +99,7 @@ const Catalog = (() => {
             description: 'Sewa concrete cutter untuk pemotongan beton, aspal, dan lantai keramik di Bandung. Kedalaman potong variabel.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'assets/images/cuting-jalan.png'
+            image: 'assets/images/bekas-pemotong-jalan.png'
         },
         {
             id: 10,
@@ -109,7 +109,7 @@ const Catalog = (() => {
             description: 'Rental mesin potong keramik presisi tinggi untuk ubin, granit, dan keramik di proyek Bandung. Mudah digunakan.',
             category: 'alat-potong',
             categoryLabel: 'Alat Potong',
-            image: 'assets/images/pemotong-keramik.png'
+            image: 'assets/images/bekas-pemotong-keramik.png'
         },
         {
             id: 11,
@@ -119,7 +119,7 @@ const Catalog = (() => {
             description: 'Rental baby setum untuk pemadatan aspal,baby setum di proyek Bandung. Mudah digunakan.',
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
-            image: 'assets/images/baby-setum.png'
+            image: 'assets/images/bekas-setum.png'
         }
     ];
 
