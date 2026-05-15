@@ -49,7 +49,7 @@ const Catalog = (() => {
             description: 'Rental genset 5000 Watt silent untuk kebutuhan listrik proyek di Bandung. Bising rendah dan irit bahan bakar.',
             category: 'generator',
             categoryLabel: 'Generator',
-            image: 'assets/images/bekas-genset.png'
+            image: 'assets/images/genset-bekas.jpeg'
         },
         {
             id: 5,
