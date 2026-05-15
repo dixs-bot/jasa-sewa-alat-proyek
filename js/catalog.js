@@ -92,7 +92,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-pemotong-kramik.png'
         },
         {
-            id: 9,
+            id: 10,
             name: 'Baby Setum',
             price: 'Rp 75.000',
             priceUnit: '/hari',
