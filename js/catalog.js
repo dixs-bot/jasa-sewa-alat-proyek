@@ -23,16 +23,6 @@ const Catalog = (() => {
         },
         {
             id: 2,
-            name: 'Mesin Las / Setum',
-            price: 'Rp 100.000',
-            priceUnit: '/hari',
-            description: 'Rental mesin las setum 450A untuk pengelasan besi dan baja konstruksi di Bandung. Hasil rapi dan konsisten.',
-            category: 'alat-las',
-            categoryLabel: 'Alat Las',
-            image: 'assets/images/bekas-lasan.png'
-        },
-        {
-            id: 3,
             name: 'Jack Hammer',
             price: 'Rp 200.000',
             priceUnit: '/hari',
@@ -42,7 +32,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-borr.png'
         },
         {
-            id: 4,
+            id: 3,
             name: 'Genset 5000 Watt',
             price: 'Rp 300.000',
             priceUnit: '/hari',
@@ -52,7 +42,7 @@ const Catalog = (() => {
             image: 'assets/images/genset-bekas.jpeg'
         },
         {
-            id: 5,
+            id: 4,
             name: 'Molen Beton',
             price: 'Rp 175.000',
             priceUnit: '/hari',
@@ -72,7 +62,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-vibrator.png'
         },
         {
-            id: 7,
+            id: 6,
             name: 'Bar Cutter',
             price: 'Rp 100.000',
             priceUnit: '/hari',
@@ -82,7 +72,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-barcutter.png'
         },
         {
-            id: 8,
+            id: 7,
             name: 'Cutting Beton',
             price: 'Rp 350.000',
             priceUnit: '/hari',
@@ -92,7 +82,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-pemotong-jalan.png'
         },
         {
-            id: 9,
+            id: 8,
             name: 'Mesin Potong Keramik',
             price: 'Rp 75.000',
             priceUnit: '/hari',
@@ -102,7 +92,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-pemotong-kramik.png'
         },
         {
-            id: 10,
+            id: 9,
             name: 'Baby Setum',
             price: 'Rp 75.000',
             priceUnit: '/hari',
