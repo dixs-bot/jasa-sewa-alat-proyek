@@ -100,6 +100,16 @@ const Catalog = (() => {
             category: 'mesin-beton',
             categoryLabel: 'Mesin Beton',
             image: 'assets/images/bekas-setum.png'
+        },
+        {
+            id: 9,
+            name: 'Baby Loler',
+            price: 'Rp 75.000',
+            priceUnit: '/hari',
+            description: 'Rental baby setum untuk pemadatan aspal,baby loler 1 ton di proyek Bandung. Mudah digunakan.',
+            category: 'mesin-beton',
+            categoryLabel: 'Mesin Beton',
+            image: 'assets/images/bekas-loler.jpeg'
         }
     ];
 
