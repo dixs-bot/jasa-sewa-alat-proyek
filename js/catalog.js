@@ -83,7 +83,7 @@ const Catalog = (() => {
         },
         {
             id: 8,
-            name: 'Cuting Beton',
+            name: 'Cutting Beton',
             price: 'Rp 350.000',
             priceUnit: '/hari',
             description: 'Sewa concrete cutter untuk pemotongan beton, aspal, dan lantai keramik di Bandung. Kedalaman potong variabel.',
