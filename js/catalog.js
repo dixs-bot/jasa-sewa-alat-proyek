@@ -13,16 +13,6 @@ const Catalog = (() => {
     const DATA = [
         {
             id: 1,
-            name: 'Mesin Cor Beton',
-            price: 'Rp 500.000',
-            priceUnit: '/hari',
-            description: 'Sewa mesin cor beton berkualitas tinggi untuk proyek pengecoran di Bandung. Tersedia berbagai tipe dengan performa stabil.',
-            category: 'mesin-beton',
-            categoryLabel: 'Mesin Beton',
-            image: 'assets/images/bekas-molen.png'
-        },
-        {
-            id: 2,
             name: 'Stamper Kodok',
             price: 'Rp 150.000',
             priceUnit: '/hari',
@@ -32,7 +22,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-kodok.png'
         },
         {
-            id: 3,
+            id: 2,
             name: 'Mesin Las / Setum',
             price: 'Rp 100.000',
             priceUnit: '/hari',
@@ -42,7 +32,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-lasan.png'
         },
         {
-            id: 4,
+            id: 3,
             name: 'Jack Hammer',
             price: 'Rp 200.000',
             priceUnit: '/hari',
@@ -52,7 +42,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-borr.png'
         },
         {
-            id: 5,
+            id: 4,
             name: 'Genset 5000 Watt',
             price: 'Rp 300.000',
             priceUnit: '/hari',
@@ -62,7 +52,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-genset.png'
         },
         {
-            id: 6,
+            id: 5,
             name: 'Molen Beton',
             price: 'Rp 175.000',
             priceUnit: '/hari',
@@ -72,7 +62,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-molen.png'
         },
         {
-            id: 7,
+            id: 5,
             name: 'Vibrator Beton',
             price: 'Rp 125.000',
             priceUnit: '/hari',
@@ -82,7 +72,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-vibrator.png'
         },
         {
-            id: 8,
+            id: 7,
             name: 'Bar Cutter',
             price: 'Rp 100.000',
             priceUnit: '/hari',
@@ -92,8 +82,8 @@ const Catalog = (() => {
             image: 'assets/images/bekas-barcutter.png'
         },
         {
-            id: 9,
-            name: 'Concrete Cutter',
+            id: 8,
+            name: 'Cuting Beton',
             price: 'Rp 350.000',
             priceUnit: '/hari',
             description: 'Sewa concrete cutter untuk pemotongan beton, aspal, dan lantai keramik di Bandung. Kedalaman potong variabel.',
@@ -102,7 +92,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-pemotong-jalan.png'
         },
         {
-            id: 10,
+            id: 9,
             name: 'Mesin Potong Keramik',
             price: 'Rp 75.000',
             priceUnit: '/hari',
@@ -112,7 +102,7 @@ const Catalog = (() => {
             image: 'assets/images/bekas-pemotong-kramik.png'
         },
         {
-            id: 11,
+            id: 10,
             name: 'Baby Setum',
             price: 'Rp 75.000',
             priceUnit: '/hari',
